@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	c.display = function(){
+		//c.data.message = c.data.sometext;
+		//console.log(c.data.message);
+		
+		c.server.update().then(function(data) {		
+			//console.log("message", data.message)
+		})		
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>my_hello_world</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>My Hello World</name>
+        <option_schema>[{"name":"default_text","section":"other","default_value":"enter your name","label":"default text","type":"string"}]</option_schema>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	var user = gs.getUserDisplayName()
+	data.message = user;
+	if(input){
+		data.message = input.sometext;
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-02 14:41:37</sys_created_on>
+        <sys_id>fd6c34e88312121007fc9420ceaad3e3</sys_id>
+        <sys_mod_count>29</sys_mod_count>
+        <sys_name>My Hello World</sys_name>
+        <sys_package display_value="Hello World" source="x_505356_hello_w_0">3764e2028361121007fc9420ceaad3df</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Hello World">3764e2028361121007fc9420ceaad3df</sys_scope>
+        <sys_update_name>sp_widget_fd6c34e88312121007fc9420ceaad3e3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-01-31 12:05:25</sys_updated_on>
+        <template><![CDATA[<div>
+<!-- your widget template -->
+ Enter your name:
+ <input type="text" ng-model="c.data.sometext"  ng-change="c.display()" placeholder = '{{options.default_text}}'/>
+ <h1>{{ c.data.message }}</h1>
+</div>	]]></template>
+    </sp_widget>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>fd6c34e88312121007fc9420ceaad3e3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-12-02 14:41:35</sys_created_on>
+        <sys_id>aa8cb8e88312121007fc9420ceaad3db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-12-02 14:41:35</sys_updated_on>
+        <table>sp_widget</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
